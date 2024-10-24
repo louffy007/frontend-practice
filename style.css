@@ -43,3 +43,16 @@ li{
     padding: 1rem;
     background-color: blueviolet;
 }
+
+
+/* GRID */
+
+
+.grid-3-columns{
+    margin: 5rem auto;
+    width: min(90%, 75rem);
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-auto-flow: column;   /* so if we delet a column the others will take the space */
+    gap: 2rem;
+}
