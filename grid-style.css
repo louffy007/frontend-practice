@@ -1,11 +1,98 @@
-/* GRID */
-
-
-.grid-3-columns{
+/* .grid-3-columns{
     margin: 5rem auto;
     width: min(90%, 75rem);
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    grid-auto-flow: column;   /* so if we delet a column the others will take the space */
+     grid-template-columns: repeat(3, 1fr); 
+    grid-auto-flow: column;    so if we delet a column the others will take the space 
     gap: 2rem;
+} */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps');
+
+/* ===== Variables ===== */
+/* CSS custom properties (variables) */
+:root {
+  /* Fonts */
+  --ff-base: 'Merriweather', serif;
+  --ff-alt: 'Six Caps', sans-serif;
+
+  /* Font sizes */
+  --fs-base: 1rem;
+  --fs-h1: 3.75rem;
+  --fs-h2: 2.875rem;
+  --fs-h3: 2.25rem;
+  --fs-xl: 6rem;
+
+  /* Colors */
+  --black: #252525;
+  --yellow: #e9d20f;
+  --light-gray: #c2c2c2;
+  --dark-gray: #e8e8e8;
+  --white: #fff;
+}
+
+/* ===== Styles ===== */
+
+/* Font base (equivalent to font-base mixin) */
+.font-base {
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  font-weight: 300;
+  color: var(--black);
+}
+
+/* Font alt (equivalent to font-alt mixin) */
+.font-alt {
+  font-family: var(--ff-alt);
+  font-size: var(--fs-h2);
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.6;
+
+  display: grid;
+  grid-template-rows: 10em 50vh auto 10em;
+  grid-template-columns: 1fr 5fr 2fr 1fr;
+  grid-template-areas: "header header header header"
+  "hero hero hero hero"
+  ". main sidebar ."
+  "footer footer footer footer";
+}
+header{
+    grid-area: header;
+}
+header,footer {
+    background-color: var(--black);
+    color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-title, .footer-title{
+  font-family: ;
+}
+.hero{
+    grid-area: hero;
+}
+
+main{
+    grid-area: main;
+}
+aside{
+    grid-area: sidebar;
+}
+
+footer{
+    grid-area: footer;
 }
